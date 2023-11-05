@@ -1,0 +1,38 @@
+dependencies {
+
+    implementation(project(":together-application"))
+
+    //S3 이미지
+    implementation 'com.amazonaws:aws-java-sdk-s3:1.12.281'
+
+    //redis
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+
+    //추가한거
+    implementation("io.jsonwebtoken:jjwt:0.9.1")
+
+    //비밀번호 암호화
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+
+    //기본
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    compileOnly 'org.projectlombok:lombok'
+    runtimeOnly 'com.mysql:mysql-connector-j'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
+}
+
+
+test.useJUnitPlatform()
+jar.enabled = false
+
+tasks.register("prepareKotlinBuildScriptModel"){}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '7.0'
+}

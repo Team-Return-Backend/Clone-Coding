@@ -1,0 +1,12 @@
+dependencies {}
+
+bootJar {
+    enabled = false
+}
+
+tasks.register("prepareKotlinBuildScriptModel") {
+
+}
+task wrapper(type: Wrapper) {
+    gradleVersion = '7.0'
+}
