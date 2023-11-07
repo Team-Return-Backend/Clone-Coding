@@ -1,4 +1,6 @@
-dependencies {}
+dependencies {
+    implementation 'org.springframework:spring-tx:5.3.22'
+}
 
 bootJar {
     enabled = false
