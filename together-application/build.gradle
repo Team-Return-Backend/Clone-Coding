@@ -1,0 +1,14 @@
+dependencies {
+    implementation 'org.springframework:spring-tx:5.3.22'
+}
+
+bootJar {
+    enabled = false
+}
+
+tasks.register("prepareKotlinBuildScriptModel") {
+
+}
+task wrapper(type: Wrapper) {
+    gradleVersion = '7.0'
+}

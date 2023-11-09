@@ -1,1 +1,3 @@
 rootProject.name = 'together'
+include 'together-application'
+include 'together-infrastructure'
