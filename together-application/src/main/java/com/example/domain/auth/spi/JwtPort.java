@@ -4,5 +4,5 @@ import com.example.domain.auth.dto.TokenResponse;
 
 public interface JwtPort {
 
-    TokenResponse createToken(Long userId);
+    TokenResponse createToken(String email);
 }

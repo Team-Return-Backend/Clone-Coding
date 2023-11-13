@@ -1,10 +1,11 @@
 package com.example.together.global.security.jwt;
 
+import com.example.domain.auth.dto.TokenResponse;
+import com.example.domain.auth.spi.JwtPort;
 import com.example.together.domain.auth.RefreshToken;
 import com.example.together.domain.auth.RefreshTokenRepository;
 import com.example.together.global.exception.ExpiredTokenException;
 import com.example.together.global.exception.InvalidTokenException;
-import com.example.together.global.security.TokenResponse;
 import io.jsonwebtoken.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -12,7 +13,7 @@ import java.util.Date;
 
 @RequiredArgsConstructor
 @Component
-public class JwtProvider {
+public class JwtTokenAdapter implements JwtPort {
 
     private final JwtProperties jwtProperties;
     private final RefreshTokenRepository refreshTokenRepository;

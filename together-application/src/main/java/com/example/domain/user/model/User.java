@@ -23,4 +23,10 @@ public class User {
 
     private final int donationCounts;
 
+    public User donate(int donationAmount) {
+        return this.toBuilder()
+                .donationAmount(this.donationAmount + donationAmount)
+                .donationCounts(this.donationCounts + 1)
+                .build();
+    }
 }

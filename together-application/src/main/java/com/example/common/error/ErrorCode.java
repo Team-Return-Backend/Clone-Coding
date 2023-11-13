@@ -11,25 +11,18 @@ public enum ErrorCode { //에러 코드는 Enum으로 관리
     EXPIRED_TOKEN(401 , "Expired token"),
     INVALID_TOKEN(401, "Invalid token"),
 
+    //donation
+    DONATION_NOT_FOUNT(404, "Donation not found"),
+
     //user
     USER_NOT_FOUND(404,"User not found"),
     USER_ALREADY_EXISTS(409,"User already exists"),
-    PASSWORD_MISMATCH(403,"Password mismatch"),
+    PASSWORD_MISMATCH(401,"Password mismatch"),
     WRITER_MISMATCH(403, "Writer mismatch"),
 
     //admin
-    CODE_MISMATCH(404,"Code mismatch"),
+    CODE_MISMATCH(401,"Code mismatch"),
     NOT_ADMIN(403, "Not admin"),
-
-    //petition
-    PETITION_NOT_FOUND(404, "Petition not found"),
-
-    //ban
-    BAN_NOT_FOUND(404, "Ban not found"),
-    BANNED_USER(403, "Banned User"),
-
-    //report
-    REPORT_NOT_FOUND(404, "Report not found"),
 
     //image
     IMAGE_UPLOAD_FAIL(400, "Image upload fail"),
