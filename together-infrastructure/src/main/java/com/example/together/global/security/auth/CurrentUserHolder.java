@@ -8,5 +8,4 @@ public class CurrentUserHolder {
         return currentUser.get();
     }
 
-
 }

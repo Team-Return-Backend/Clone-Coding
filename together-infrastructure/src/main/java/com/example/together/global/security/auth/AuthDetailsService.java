@@ -1,5 +1,6 @@
 package com.example.together.global.security.auth;
 
+import com.example.common.annotation.UseCase;
 import com.example.domain.user.exception.UserNotFoundException;
 import com.example.together.domain.user.persistence.entity.UserEntity;
 import com.example.together.domain.user.persistence.repository.UserJpaRepository;
@@ -9,7 +10,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
 @RequiredArgsConstructor
-@Service
+@UseCase
 public class AuthDetailsService implements UserDetailsService {
 
     private final UserJpaRepository userJpaRepository;
