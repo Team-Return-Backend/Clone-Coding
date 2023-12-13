@@ -15,7 +15,7 @@ public class DonateMoneyUseCase {
     public void execute(DonateMoneyRequest request) {
         User user = securityPort.getCurrentUser();
 
-        user.donate(request.getMoneyAmount());
+        user.donateMoney(request.getMoneyAmount());
     }
 
 }

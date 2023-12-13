@@ -1,11 +1,10 @@
 package com.example.together.global.security;
 
 import com.example.together.global.error.GlobalExceptionFilter;
-import com.example.together.global.security.jwt.JwtFilter;
+import com.example.together.global.security.jwt.JwtTokenFilter;
 import com.example.together.global.security.jwt.JwtParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
-import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.security.config.annotation.SecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.DefaultSecurityFilterChain;
@@ -21,7 +20,7 @@ public class FilterConfig extends SecurityConfigurerAdapter<DefaultSecurityFilte
 
     @Override
     public void configure(HttpSecurity http) {
-        http.addFilterBefore(new JwtFilter(jwtParser), UsernamePasswordAuthenticationFilter.class);
-        http.addFilterBefore(new GlobalExceptionFilter(objectMapper), JwtFilter.class);
+        http.addFilterBefore(new JwtTokenFilter(jwtParser), UsernamePasswordAuthenticationFilter.class);
+        http.addFilterBefore(new GlobalExceptionFilter(objectMapper), JwtTokenFilter.class);
     }
 }

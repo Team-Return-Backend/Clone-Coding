@@ -1,7 +1,9 @@
 package com.example.together.global.config;
 
+import com.example.together.global.error.GlobalExceptionFilter;
 import com.example.together.global.security.jwt.JwtParser;
-import com.example.together.global.security.jwt.JwtFilter;
+import com.example.together.global.security.jwt.JwtTokenFilter;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,6 +21,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final JwtParser jwtParser;
+    private final ObjectMapper objectMapper;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -38,10 +41,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
                 .and()
                 .authorizeRequests()// 요청에 대한 사용권한 체크
+                .anyRequest().permitAll()
 
-                //admin
-                //.antMatchers("/ban/**").hasRole("ADMIN")
-                .anyRequest().permitAll();
+                .and()
+                .addFilterBefore(new JwtTokenFilter(jwtParser), UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(new GlobalExceptionFilter(objectMapper), JwtTokenFilter.class);
 
     }
 

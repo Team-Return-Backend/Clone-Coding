@@ -14,11 +14,14 @@ public class MyInfoResponse {
 
     private final int donationCounts;
 
+    private final Long moneyCounts;
+
     public static MyInfoResponse of(User user) {
         return MyInfoResponse.builder()
                 .nickname(user.getNickname())
                 .donationAmount(user.getDonationAmount())
                 .donationCounts(user.getDonationCounts())
+                .moneyCounts(user.getMoneyCounts())
                 .build();
     }
 
