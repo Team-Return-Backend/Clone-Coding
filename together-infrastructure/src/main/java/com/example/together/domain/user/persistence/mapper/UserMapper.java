@@ -18,6 +18,7 @@ public class UserMapper {
                 .email(domain.getEmail())
                 .donationAmount(domain.getDonationAmount())
                 .donationCounts(domain.getDonationCounts())
+                .moneyCounts(domain.getMoneyCounts())
                 .build();
     }
 
@@ -30,6 +31,7 @@ public class UserMapper {
                 .email(entity.getEmail())
                 .donationAmount(entity.getDonationAmount())
                 .donationCounts(entity.getDonationCounts())
+                .moneyCounts(entity.getMoneyCounts())
                 .build();
     }
 }

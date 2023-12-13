@@ -41,8 +41,11 @@ public class UserEntity {
     @Column(columnDefinition = "INT")
     private int donationCounts;
 
+    @Column(columnDefinition = "LONG")
+    private Long moneyCounts;
+
     @Builder
-    public UserEntity(Long id, String nickname, String password, String phoneNumber, String email, int donationAmount, int donationCounts) {
+    public UserEntity(Long id, String nickname, String password, String phoneNumber, String email, int donationAmount, int donationCounts, Long moneyCounts) {
         this.id = id;
         this.nickname = nickname;
         this.password = password;
@@ -50,5 +53,6 @@ public class UserEntity {
         this.email = email;
         this.donationAmount = donationAmount;
         this.donationCounts = donationCounts;
+        this.moneyCounts = moneyCounts;
     }
 }
