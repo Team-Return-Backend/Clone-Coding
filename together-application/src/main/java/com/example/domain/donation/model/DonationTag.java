@@ -9,6 +9,6 @@ public enum DonationTag {
     DISADVANTAGED, //저소득 가정
     ANIMAL, //동물
     DISABLED, //장애인
-    EARTH, //지구촌,
+    EARTH, //지구촌
 
 }

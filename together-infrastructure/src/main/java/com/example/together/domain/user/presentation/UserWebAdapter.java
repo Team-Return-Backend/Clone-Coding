@@ -35,4 +35,5 @@ public class UserWebAdapter {
     public MyInfoResponse myInfo() {
         return myInfoUseCase.execute();
     }
+
 }

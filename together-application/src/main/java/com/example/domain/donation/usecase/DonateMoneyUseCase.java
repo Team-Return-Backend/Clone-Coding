@@ -18,6 +18,4 @@ public class DonateMoneyUseCase {
         user.donate(request.getMoneyAmount());
     }
 
-
-
 }
