@@ -33,6 +33,9 @@ public class SignupUseCase {
                         .password(request.getPassword())
                         .phoneNumber(request.getPhoneNumber())
                         .email(request.getEmail())
+                        .donationAmount(0)
+                        .donationCounts(0)
+                        .moneyCounts(1000000L)
                         .build()
         );
 
