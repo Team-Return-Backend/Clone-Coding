@@ -1,6 +1,7 @@
 package com.example.together.domain.donation.persistence;
 
 import com.example.domain.donation.model.Donation;
+import com.example.domain.donation.model.DonationTag;
 import com.example.domain.donation.spi.DonationPort;
 import com.example.domain.donation.spi.DonationVO;
 import com.example.domain.user.model.User;
@@ -33,5 +34,10 @@ public class DonationPersistenceAdapter implements DonationPort {
     @Override
     public List<DonationVO> queryDonationList() {
         return donationJpaRepository.findAll().stream().map(DonationVO.class::cast).toList();
+    }
+
+    @Override
+    public List<DonationVO> queryDonationListByTag(DonationTag donationTag) {
+        return donationJpaRepository.findAllByDonationTag(donationTag).stream().map(DonationVO.class::cast).toList();
     }
 }
